@@ -41,8 +41,7 @@
 &none  &kp Q             &kp W        &kp E           &kp R               &kp T    &none  &none  &kp Y    &kp U                &kp I            &kp O                &kp P                     &none
 &none  &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G    &none  &none  &kp H    &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RIGHT_CONTROL L  &mt LEFT_SHIFT SEMICOLON  &none
 &none  &kp Z             &kp X        &kp C           &kp V               &kp B                  &kp N    &kp M                &kp COMMA        &kp DOT              &kp FSLH                  &none
-                                      &kp ESCAPE      &kp SPACE           &kp TAB                &kp RET  &mo 1                &kp DELETE
-            >;
+                                       &kp ESCAPE      &kp SPACE           &kp TAB                &kp RET  &lt 1 0              &kp DELETE            >;
         };
 
         layer_symnav {
@@ -58,8 +57,7 @@
 &trans  &kp N1                &kp N2            &kp N3                     &kp N4                          &kp N5          &trans  &trans  &kp N6     &kp N7                  &kp N8                  &kp N9                         &kp N0               &trans
 &trans  &mt LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &mt LEFT_ALT LEFT_BRACKET  &mt LEFT_COMMAND RIGHT_BRACKET  &kp EQUAL       &trans  &trans  &kp LEFT   &mt RIGHT_COMMAND DOWN  &mt RIGHT_ALT UP_ARROW  &mt RIGHT_CONTROL RIGHT_ARROW  &mt RIGHT_SHIFT SQT  &trans
 &trans  &none                 &none             &kp LEFT_PARENTHESIS       &kp RIGHT_PARENTHESIS           &studio_unlock                  &kp MINUS  &trans                  &trans                  &trans                         &trans               &trans
-                                                &to 0                      &trans                          &trans                          &trans     &to 2                   &trans
-            >;
+                                                 &lt 0 0                    &trans                          &trans                          &trans     &lt 2 0                 &trans            >;
         };
 
             // -----------------------------------------------------------------------------------------
@@ -74,7 +72,7 @@
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &none           &trans  &trans  &bt BT_NXT  &bt BT_CLR  &sys_reset  &bootloader  &studio_unlock  &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &none           &trans  &trans  &none       &none       &none       &none        &none           &trans
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &studio_unlock                  &trans      &trans      &trans      &trans       &trans          &trans
-                         &to 0    &trans   &trans                          &trans      &trans      &trans
+                         &lt 0 0  &trans   &trans                          &trans      &trans      &trans
             >;
         };
     };
