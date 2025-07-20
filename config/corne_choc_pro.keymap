@@ -12,18 +12,30 @@
     chosen { zmk,physical-layout = &default_layout; };
 };
 
-/ {
+/  {  
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = 200;        // time to hold before tap is registered as a hold
+            quick-tap-ms = 175;           // prevents accidental hold during fast typing
+            flavor = "tap-preferred";     // favors tap, only hold if really held
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         layer_base {
             display-name = "abc";
 
-            // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |  LALT |  RALT |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |               |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
+            // -----------------------------------------------------------------------------------------
+            // |      |  Q  |  W  |  E  |  R  |  T  |      |      |  Y  |  U  |  I  |  O  |  P  |      |
+            // |      | A/⇧ | S/⌃ | D/⌥ | F/⌘ |  G  |      |      |  H  | J/⌘ | K/⌥ | L/⌃ | ;/⇧ |      |
+            // |      |  Z  |  X  |  C  |  V  |  B  |             |  N  |  M  |  ,  |  .  |  /  |      |
+            //                    | ESC | SPC | TAB |             | RET | SYM | DEL |
 
             bindings = <
 &none  &kp Q             &kp W        &kp E           &kp R               &kp T    &none  &none  &kp Y    &kp U                &kp I            &kp O                &kp P                     &none
@@ -37,10 +49,10 @@
             display-name = "sym";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   |  LALT  | RALT  | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT | BTCR| RGB | RST | BOOT| Unlock|        |       |     |     |     |     |     |      |
-            //                    | GUI |     | SPC   |        | ENT   |     | ALT |
+            // |      |  1  |  2  |  3  |  4  |  5  |      |      |  6  |  7  |  8  |  9  |  0  |      |
+            // |      | `/⇧ | ⌃   | [/⌥ | ]/⌘ |  =  |      |      |  ←  | ↓/⌘ | ↑/⌥ | →/⌃ | '/⇧ |      |
+            // |      |     |     |  (  |  )  | UNL |             |  -  |     |     |     |     |      |
+            //                    | BSE |     |     |             |     | FUN |     |
 
             bindings = <
 &trans  &kp N1                &kp N2            &kp N3                     &kp N4                          &kp N5          &trans  &trans  &kp N6     &kp N7                  &kp N8                  &kp N9                         &kp N0               &trans
@@ -50,6 +62,12 @@
             >;
         };
 
+            // -----------------------------------------------------------------------------------------
+            // |      | F9  | F10 | F11 | F12 |     |      |      | BT→ | BTC | RST | BOT | UNL |      |
+            // |      | F5  | F6  | F7  | F8  |     |      |      |     |     |     |     |     |      |
+            // |      | F1  | F2  | F3  | F4  | UNL |             |     |     |     |     |     |      |
+            //                    | BSE |     |     |             |     |     |     |
+
         layer_fun {
             display-name = "fun";
             bindings = <
@@ -57,66 +75,6 @@
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &none           &trans  &trans  &none       &none       &none       &none        &none           &trans
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &studio_unlock                  &trans      &trans      &trans      &trans       &trans          &trans
                          &to 0    &trans   &trans                          &trans      &trans      &trans
-            >;
-        };
-
-        extra_layer_6 {
-            display-name = "EXTRA 6";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_1 {
-            display-name = "EXTRA 1";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_2 {
-            display-name = "EXTRA 2";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_3 {
-            display-name = "EXTRA 3";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_4 {
-            display-name = "EXTRA 4";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
-            >;
-        };
-
-        extra_layer_5 {
-            display-name = "EXTRA 5";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
             >;
         };
     };
