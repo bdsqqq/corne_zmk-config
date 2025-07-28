@@ -8,21 +8,17 @@
 ---
 include:
   - board: corne_choc_pro_left
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    shield: nice_view
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: corne_choc_pro_right
-    snippet: zmk-usb-logging
-
-  # studio builds (commented out temporarily for logging)
-  # - board: corne_choc_pro_left
-  #   snippet: studio-rpc-usb-uart
-  #   shield: nice_view
-  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
-  # - board: corne_choc_pro_right
-  #   shield: nice_view
-  #   snippet: studio-rpc-usb-uart
+    shield: nice_view
+    snippet: studio-rpc-usb-uart
 
   - board: corne_choc_pro_left
     shield: settings_reset
+    snippet: studio-rpc-usb-uart
   - board: corne_choc_pro_right
     shield: settings_reset
+    snippet: studio-rpc-usb-uart
     
