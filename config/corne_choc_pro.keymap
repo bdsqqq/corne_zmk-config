@@ -18,9 +18,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;        // time to hold before tap is registered as a hold
-            quick-tap-ms = <200>;           // prevents accidental hold during fast typing
-            require-prior-idle-ms = <200>;  // disables hold-tap when typing quickly
+            tapping-term-ms = <250>;        // time to hold before tap is registered as a hold
+            quick-tap-ms = <150>;           // prevents accidental hold during fast typing
+            require-prior-idle-ms = <250>;  // disables hold-tap when typing quickly
             flavor = "tap-preferred";       // favors tap, only hold if really held
             bindings = <&kp>, <&kp>;
         };
