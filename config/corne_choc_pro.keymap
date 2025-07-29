@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     chosen { zmk,physical-layout = &default_layout; };
@@ -24,14 +25,15 @@
             flavor = "tap-preferred";       // favors tap, only hold if really held
             bindings = <&kp>, <&kp>;
         };
-        
+
         td: tog_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "TOGGLE_HOLD";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&to>;        // hold = momentary, tap = toggle
+            bindings = <&mo>, <&to>;
+        // hold = momentary, tap = toggle
         };
     };
 
@@ -51,7 +53,8 @@
 &none  &kp Q             &kp W        &kp E           &kp R               &kp T    &none  &none  &kp Y    &kp U                &kp I            &kp O                &kp P                     &none
 &none  &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G    &none  &none  &kp H    &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RIGHT_CONTROL L  &mt LEFT_SHIFT SEMICOLON  &none
 &none  &kp Z             &kp X        &kp C           &kp V               &kp B                  &kp N    &kp M                &kp COMMA        &kp DOT              &kp FSLH                  &none
-                                                                                                                                                               &kp ESCAPE      &kp SPACE           &kp TAB                &kp RET  &td 1 1              &kp BSPC            >;
+                                      &kp ESCAPE      &kp SPACE           &kp TAB                &kp RET  &td 1 1              &kp BSPC
+            >;
         };
 
         layer_symnav {
@@ -67,22 +70,23 @@
 &trans  &kp N1                &kp N2            &kp N3                     &kp N4                          &kp N5          &trans  &trans  &kp N6     &kp N7                  &kp N8                  &kp N9                         &kp N0               &trans
 &trans  &mt LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &mt LEFT_ALT LEFT_BRACKET  &mt LEFT_COMMAND RIGHT_BRACKET  &kp EQUAL       &trans  &trans  &kp LEFT   &mt RIGHT_COMMAND DOWN  &mt RIGHT_ALT UP_ARROW  &mt RIGHT_CONTROL RIGHT_ARROW  &mt RIGHT_SHIFT SQT  &trans
 &trans  &none                 &none             &kp LEFT_PARENTHESIS       &kp RIGHT_PARENTHESIS           &studio_unlock                  &kp MINUS  &trans                  &trans                  &trans                         &trans               &trans
-                                                                                                   &to 0                      &trans                          &trans                          &trans     &td 2 2                 &trans            >;
+                                                &to 0                      &trans                          &trans                          &trans     &td 2 2                 &trans
+            >;
         };
 
-            // -----------------------------------------------------------------------------------------
-            // |      | F9  | F10 | F11 | F12 |     |      |      | BT→ | BTC | RST | BOT | UNL |      |
-            // |      | F5  | F6  | F7  | F8  |     |      |      |     |     |     |     |     |      |
-            // |      | F1  | F2  | F3  | F4  | UNL |             |     |     |     |     |     |      |
-            //                    | BSE |     |     |             |     |     |     |
+        // -----------------------------------------------------------------------------------------
+        // |      | F9  | F10 | F11 | F12 |     |      |      | BT→ | BTC | RST | BOT | UNL |      |
+        // |      | F5  | F6  | F7  | F8  |     |      |      |     |     |     |     |     |      |
+        // |      | F1  | F2  | F3  | F4  | UNL |             |     |     |     |     |     |      |
+        //                    | BSE |     |     |             |     |     |     |
 
         layer_fun {
             display-name = "fun";
             bindings = <
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &none           &trans  &trans  &bt BT_NXT  &bt BT_CLR  &sys_reset  &bootloader  &studio_unlock  &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &none           &trans  &trans  &none       &none       &none       &none        &none           &trans
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &studio_unlock                  &trans      &trans      &trans      &trans       &trans          &trans
-                         &to 0    &trans   &trans                          &trans      &trans      &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &none           &trans  &trans  &bt BT_NXT       &bt BT_CLR  &sys_reset  &bootloader  &studio_unlock  &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &none           &trans  &trans  &none            &none       &none       &none        &none           &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &studio_unlock                  &rgb_ug RGB_TOG  &trans      &trans      &trans       &trans          &trans
+                         &to 0    &trans   &trans                          &trans           &trans      &trans
             >;
         };
     };
