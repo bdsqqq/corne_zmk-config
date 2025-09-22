@@ -104,7 +104,7 @@
 &trans  &kp N1                 &kp N2            &kp N3                      &kp N4                           &kp N5         &trans  &trans  &kp N6     &kp N7                   &kp N8                   &kp N9                          &kp N0                &trans
 &trans  &hml LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &hml LEFT_ALT LEFT_BRACKET  &hml LEFT_COMMAND RIGHT_BRACKET  &kp EQUAL      &trans  &trans  &kp LEFT   &hmr RIGHT_COMMAND DOWN  &hmr RIGHT_ALT UP_ARROW  &hmr RIGHT_CONTROL RIGHT_ARROW  &hmr RIGHT_SHIFT SQT  &trans
 &trans  &none                  &none             &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS            &kp BACKSLASH                  &kp MINUS  &trans                   &trans                   &trans                          &trans                &trans
-                                                     &trans                       &kp TAB                          &kp RET                        &trans     &trans                  &trans
+                                                     &trans                       &trans                           &kp RET                        &trans     &trans                  &trans
             >;
         };
 
