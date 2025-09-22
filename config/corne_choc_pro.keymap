@@ -32,7 +32,7 @@
             // Right-hand keys + thumbs for corne_choc_pro layout
 
             hold-trigger-key-positions = <8 9 10 11 12 22 23 24 25 26 34 35 36 37 38 44 45>;
-            
+            hold-trigger-on-release;
         };
 
         // Right-hand home row mods  
@@ -50,7 +50,7 @@
             // Left-hand keys + thumbs for corne_choc_pro layout  
 
             hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 41 42>;
-            
+            hold-trigger-on-release;
         }; 
 
         lt_hp: lt_hold_preferred {
