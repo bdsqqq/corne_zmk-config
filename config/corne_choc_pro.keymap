@@ -53,12 +53,21 @@
             hold-trigger-on-release;
         }; 
 
+        lt_hp: lt_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_HOLD_PREFERRED";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            // leave tapping-term-ms default or tune later
+            bindings = <&mo>, <&kp>;
+        };
+
         esc_td: esc_layer_tapdance {
             compatible = "zmk,behavior-tap-dance";
             label = "ESC_LAYER_TAPDANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 1 ESCAPE>, <&lt 2 ESCAPE>;
+            bindings = <&lt_hp 1 ESCAPE>, <&lt_hp 2 ESCAPE>;
         };
     };
 
