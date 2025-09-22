@@ -51,17 +51,14 @@
 
             hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 41 42>;
             hold-trigger-on-release;
-        };
+        }; 
 
-        td: tog_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TOGGLE_HOLD";
-            #binding-cells = <2>;
+        esc_td: esc_layer_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_LAYER_TAPDANCE";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&to>;
-
-            // hold = momentary, tap = toggle
+            bindings = <&lt 1 ESCAPE>, <&lt 2 ESCAPE>;
         };
     };
 
@@ -75,13 +72,13 @@
             // |      |  Q  |  W  |  E  |  R  |  T  |      |      |  Y  |  U  |  I  |  O  |  P  |      |
             // |      | A/⇧ | S/⌃ | D/⌥ | F/⌘ |  G  |      |      |  H  | J/⌘ | K/⌥ | L/⌃ | ;/⇧ |      |
             // |      |  Z  |  X  |  C  |  V  |  B  |             |  N  |  M  |  ,  |  .  |  /  |      |
-            //                    | ESC | SPC | TAB |             | RET | SYM | DEL |
+            //                    |     | SPC | TAB |             | RET | ⎋/≣ | DEL |
 
             bindings = <
 &none  &kp Q              &kp W         &kp E            &kp R                &kp T    &none  &none  &kp Y    &kp U                 &kp I             &kp O                 &kp P                       &none
 &none  &hml LEFT_SHIFT A  &hml LCTRL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G    &none  &none  &kp H    &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMICOLON  &none
 &none  &kp Z              &kp X         &kp C            &kp V                &kp B                  &kp N    &kp M                 &kp COMMA         &kp DOT               &kp FSLH                    &none
-                                        &kp ESCAPE       &kp SPACE            &kp TAB                &kp RET  &td 1 1               &kp BSPC
+                                        &none            &kp SPACE            &kp TAB                &kp RET  &esc_td               &kp BSPC
             >;
         };
 
@@ -92,13 +89,13 @@
             // |      |  1  |  2  |  3  |  4  |  5  |      |      |  6  |  7  |  8  |  9  |  0  |      |
             // |      | `/⇧ | ⌃   | [/⌥ | ]/⌘ |  =  |      |      |  ←  | ↓/⌘ | ↑/⌥ | →/⌃ | '/⇧ |      |
             // |      |     |     |  (  |  )  | UNL |             |  -  |     |     |     |     |      |
-            //                    | BSE |     |     |             |     | FUN |     |
+            //                    |     |     |     |             |     |     |     |
 
             bindings = <
 &trans  &kp N1                 &kp N2            &kp N3                      &kp N4                           &kp N5         &trans  &trans  &kp N6     &kp N7                   &kp N8                   &kp N9                          &kp N0                &trans
 &trans  &hml LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &hml LEFT_ALT LEFT_BRACKET  &hml LEFT_COMMAND RIGHT_BRACKET  &kp EQUAL      &trans  &trans  &kp LEFT   &hmr RIGHT_COMMAND DOWN  &hmr RIGHT_ALT UP_ARROW  &hmr RIGHT_CONTROL RIGHT_ARROW  &hmr RIGHT_SHIFT SQT  &trans
 &trans  &none                  &none             &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS            &kp BACKSLASH                  &kp MINUS  &trans                   &trans                   &trans                          &trans                &trans
-                                                 &to 0                       &trans                           &trans                         &trans     &td 2 2                  &trans
+                                                     &trans                       &trans                           &trans                         &trans     &trans                  &trans
             >;
         };
 
@@ -106,7 +103,7 @@
         // |      | F9  | F10 | F11 | F12 |     |      |      | BT→ | BTC | RST | BOT | UNL |      |
         // |      | F5  | F6  | F7  | F8  |     |      |      |     |     |     |     |     |      |
         // |      | F1  | F2  | F3  | F4  | UNL |             |     |     |     |     |     |      |
-        //                    | BSE |     |     |             |     |     |     |
+        //                    |     |     |     |             |     |     |     |
 
         layer_fun {
             display-name = "fun";
@@ -114,7 +111,7 @@
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &none           &trans  &trans  &bt BT_NXT       &bt BT_CLR  &sys_reset  &bootloader  &studio_unlock  &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &none           &trans  &trans  &none            &none       &none       &none        &none           &trans
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &studio_unlock                  &rgb_ug RGB_TOG  &trans      &trans      &trans       &trans          &trans
-                         &to 0    &trans   &trans                          &trans           &trans      &trans
+                         &trans   &trans   &trans                          &trans           &trans      &trans
             >;
         };
     };
