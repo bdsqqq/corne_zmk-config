@@ -17,8 +17,8 @@
     behaviors {
         // Timeless homerow mods implementation inspired by urob's work:
         // https://github.com/urob/zmk-config?tab=readme-ov-file#timeless-homerow-mods
-        
         // Left-hand home row mods
+
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_ROW_MOD_LEFT";
@@ -28,12 +28,15 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
             // Right-hand keys + thumbs for corne_choc_pro layout
+
             hold-trigger-key-positions = <8 9 10 11 12 22 23 24 25 26 34 35 36 37 38 44 45>;
             hold-trigger-on-release;
         };
-        
+
         // Right-hand home row mods  
+
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_ROW_MOD_RIGHT";
@@ -43,7 +46,9 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
             // Left-hand keys + thumbs for corne_choc_pro layout  
+
             hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 41 42>;
             hold-trigger-on-release;
         };
@@ -55,7 +60,8 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&to>;
-        // hold = momentary, tap = toggle
+
+            // hold = momentary, tap = toggle
         };
     };
 
@@ -72,10 +78,10 @@
             //                    | ESC | SPC | TAB |             | RET | SYM | DEL |
 
             bindings = <
-&none  &kp Q              &kp W        &kp E           &kp R               &kp T    &none  &none  &kp Y    &kp U                &kp I            &kp O                &kp P                     &none
-&none  &hml LEFT_SHIFT A  &hml LCTRL S &hml LEFT_ALT D &hml LEFT_COMMAND F &kp G    &none  &none  &kp H    &hmr RIGHT_COMMAND J &hmr RIGHT_ALT K &hmr RIGHT_CONTROL L &hmr RIGHT_SHIFT SEMICOLON &none
-&none  &kp Z             &kp X        &kp C           &kp V               &kp B                  &kp N    &kp M                &kp COMMA        &kp DOT              &kp FSLH                  &none
-                                      &kp ESCAPE      &kp SPACE           &kp TAB                &kp RET  &td 1 1              &kp BSPC
+&none  &kp Q              &kp W         &kp E            &kp R                &kp T    &none  &none  &kp Y    &kp U                 &kp I             &kp O                 &kp P                       &none
+&none  &hml LEFT_SHIFT A  &hml LCTRL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G    &none  &none  &kp H    &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMICOLON  &none
+&none  &kp Z              &kp X         &kp C            &kp V                &kp B                  &kp N    &kp M                 &kp COMMA         &kp DOT               &kp FSLH                    &none
+                                        &kp ESCAPE       &kp SPACE            &kp TAB                &kp RET  &td 1 1               &kp BSPC
             >;
         };
 
@@ -89,10 +95,10 @@
             //                    | BSE |     |     |             |     | FUN |     |
 
             bindings = <
-&trans  &kp N1                 &kp N2            &kp N3                     &kp N4                          &kp N5          &trans  &trans  &kp N6     &kp N7                  &kp N8                  &kp N9                         &kp N0               &trans
-&trans  &hml LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &hml LEFT_ALT LEFT_BRACKET &hml LEFT_COMMAND RIGHT_BRACKET &kp EQUAL       &trans  &trans  &kp LEFT   &hmr RIGHT_COMMAND DOWN &hmr RIGHT_ALT UP_ARROW &hmr RIGHT_CONTROL RIGHT_ARROW &hmr RIGHT_SHIFT SQT &trans
-&trans  &none                 &none             &kp LEFT_PARENTHESIS       &kp RIGHT_PARENTHESIS           &studio_unlock                  &kp MINUS  &trans                  &trans                  &trans                         &trans               &trans
-                                                &to 0                      &trans                          &trans                          &trans     &td 2 2                 &trans
+&trans  &kp N1                 &kp N2            &kp N3                      &kp N4                           &kp N5         &trans  &trans  &kp N6     &kp N7                   &kp N8                   &kp N9                          &kp N0                &trans
+&trans  &hml LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &hml LEFT_ALT LEFT_BRACKET  &hml LEFT_COMMAND RIGHT_BRACKET  &kp EQUAL      &trans  &trans  &kp LEFT   &hmr RIGHT_COMMAND DOWN  &hmr RIGHT_ALT UP_ARROW  &hmr RIGHT_CONTROL RIGHT_ARROW  &hmr RIGHT_SHIFT SQT  &trans
+&trans  &none                  &none             &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS            &kp BACKSLASH                  &kp MINUS  &trans                   &trans                   &trans                          &trans                &trans
+                                                 &to 0                       &trans                           &trans                         &trans     &td 2 2                  &trans
             >;
         };
 
