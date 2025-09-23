@@ -31,7 +31,7 @@
 
             // Right-hand keys + thumbs for corne_choc_pro layout
 
-            hold-trigger-key-positions = <8 9 10 11 12 22 23 24 25 26 34 35 36 37 38 44 45>;
+            hold-trigger-key-positions = <8 9 10 11 12 22 23 24 25 26 34 35 36 37 38 43 44 45>;
             hold-trigger-on-release;
         };
 
@@ -49,7 +49,7 @@
 
             // Left-hand keys + thumbs for corne_choc_pro layout  
 
-            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 41 42>;
+            hold-trigger-key-positions = <1 2 3 4 5 15 16 17 18 19 29 30 31 32 33 40 41 42>;
             hold-trigger-on-release;
         }; 
 
@@ -74,13 +74,13 @@
             // |      |  Q  |  W  |  E  |  R  |  T  |      |      |  Y  |  U  |  I  |  O  |  P  |      |
             // |      | A/⇧ | S/⌃ | D/⌥ | F/⌘ |  G  |      |      |  H  | J/⌘ | K/⌥ | L/⌃ | ;/⇧ |      |
             // |      |  Z  |  X  |  C  |  V  |  B  |             |  N  |  M  |  ,  |  .  |  /  |      |
-            //                    |     | SPC | TAB |             | RET | ⎋/≣ | BSPC |
+            //                    | ESC | SPC | TAB |             | RET | ⎋/≣ | BSPC |
 
             bindings = <
 &none  &kp Q              &kp W         &kp E            &kp R                &kp T    &none  &none  &kp Y    &kp U                 &kp I             &kp O                 &kp P                       &none
 &none  &hml LEFT_SHIFT A  &hml LCTRL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G    &none  &none  &kp H    &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMICOLON  &none
 &none  &kp Z              &kp X         &kp C            &kp V                &kp B                  &kp N    &kp M                 &kp COMMA         &kp DOT               &lt_hp 2 FSLH                 &none
-                                        &kp TAB          &kp SPACE            &trans                 &trans     &lt_hp 1 ESCAPE      &kp BSPC
+                                        &kp ESCAPE       &kp SPACE            &kp TAB                &kp RET    &mo 1              &kp BSPC
             >;
         };
 
@@ -97,7 +97,7 @@
 &trans  &kp N1                 &kp N2            &kp N3                      &kp N4                           &kp N5         &trans  &trans  &kp N6     &kp N7                   &kp N8                   &kp N9                          &kp N0                &trans
 &trans  &hml LEFT_SHIFT GRAVE  &kp LEFT_CONTROL  &hml LEFT_ALT LEFT_BRACKET  &hml LEFT_COMMAND RIGHT_BRACKET  &kp EQUAL      &trans  &trans  &kp LEFT   &hmr RIGHT_COMMAND DOWN  &hmr RIGHT_ALT UP_ARROW  &hmr RIGHT_CONTROL RIGHT_ARROW  &hmr RIGHT_SHIFT SQT  &trans
 &trans  &none                  &none             &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS            &kp BACKSLASH                  &kp MINUS  &trans                   &trans                   &trans                          &trans                &trans
-                                                     &trans                       &kp RET                          &trans                         &trans     &trans                  &trans
+                                                     &trans                       &trans                           &trans                         &trans     &trans                  &trans
             >;
         };
 
