@@ -35,6 +35,9 @@ config BT_CTLR
 config BT_CTLR_TX_PWR_PLUS_8
 	default y
 
+config ZMK_BLE_EXPERIMENTAL_CONN
+	default y
+
 config I2C
 	default y
 
