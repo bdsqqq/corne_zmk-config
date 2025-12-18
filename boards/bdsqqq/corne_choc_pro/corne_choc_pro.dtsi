@@ -102,7 +102,7 @@ zephyr_udc0: &usbd {
     status = "okay";
 };
 
-&reg0 {
+&reg1 {
     regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
 };
 
