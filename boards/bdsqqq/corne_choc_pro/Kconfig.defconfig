@@ -1,7 +1,7 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if BOARD_CORNE_CHOC_PRO
+if BOARD_CORNE_CHOC_PRO_LEFT || BOARD_CORNE_CHOC_PRO_RIGHT
 
 config ZMK_SPLIT
     default y
@@ -28,4 +28,4 @@ config I2C
 config ZMK_MAX17048
     default y
 
-endif # BOARD_CORNE_CHOC_PRO
+endif # BOARD_CORNE_CHOC_PRO_LEFT || BOARD_CORNE_CHOC_PRO_RIGHT

@@ -1,4 +1,4 @@
-board:
+boards:
   - name: corne_choc_pro_left
     vendor: bdsqqq
     socs:
