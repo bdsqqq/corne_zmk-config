@@ -7,6 +7,7 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/regulator/nrf5x.h>
 
 #include "corne_choc_pro-layouts.dtsi"
 
@@ -99,6 +100,10 @@
 
 zephyr_udc0: &usbd {
     status = "okay";
+};
+
+&reg0 {
+    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
 };
 
 
