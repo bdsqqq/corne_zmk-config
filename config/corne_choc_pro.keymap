@@ -112,8 +112,19 @@
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &none           &trans  &trans  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader     &trans  &trans  &none            &none         &none         &none         &none         &trans
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &studio_unlock                  &rgb_ug RGB_TOG  &trans        &trans        &trans        &trans        &trans
-                         &trans   &trans   &bt BT_NXT                      &trans           &trans        &bt BT_CLR
+                         &trans   &to 3    &bt BT_NXT                      &trans           &trans        &bt BT_CLR
             >;
+        };
+
+        layer_game {
+            bindings = <
+&none  &kp N1     &kp N2  &kp N3   &kp N4               &kp N5   &none  &none  &none  &none  &none  &none  &none  &none
+&none  &kp TAB    &kp Q   &kp W    &hml LEFT_COMMAND E  &kp R    &none  &none  &none  &none  &none  &none  &none  &none
+&none  &kp RSHFT  &kp A   &kp S    &kp D                &kp F                  &none  &none  &none  &none  &to 0  &none
+                          &kp ESC  &kp SPACE            &kp TAB                &none  &none  &none
+            >;
+
+            label = "gam";
         };
     };
 };
