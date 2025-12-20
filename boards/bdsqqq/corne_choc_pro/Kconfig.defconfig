@@ -1,20 +1,7 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if BOARD_CORNE_CHOC_PRO_LEFT
-
-config ZMK_KEYBOARD_NAME
-	default "Corne Choc Pro"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif # BOARD_CORNE_CHOC_PRO_LEFT
-
-if BOARD_CORNE_CHOC_PRO_LEFT || BOARD_CORNE_CHOC_PRO_RIGHT 
-
-config BOARD
-    default "corne_choc_pro"
+if BOARD_CORNE_CHOC_PRO_LEFT || BOARD_CORNE_CHOC_PRO_RIGHT
 
 config ZMK_SPLIT
     default y
