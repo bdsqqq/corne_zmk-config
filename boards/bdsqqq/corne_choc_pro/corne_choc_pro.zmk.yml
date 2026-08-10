@@ -11,6 +11,8 @@ features:
 outputs:
   - usb
   - ble
+exposes:
+  - nice_view_header
 url: https://keebart.com/products/corne-wireless
 siblings:
   - corne_choc_pro_left

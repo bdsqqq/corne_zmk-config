@@ -41,9 +41,6 @@ CONFIG_ZMK_RGB_UNDERGLOW_SAT_START=96
 # Windows Battery Reporting Fix
 CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
 
-# Enable ZMK Studio (alpha)
-CONFIG_ZMK_STUDIO=y
-
 # Split keyboard central
 CONFIG_ZMK_KEYBOARD_NAME="Corne Choc Pro"
 CONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
