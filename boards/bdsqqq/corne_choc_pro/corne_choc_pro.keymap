@@ -10,7 +10,7 @@
  * layout philosophy:
  * - homerow mods using urob's "timeless" approach to minimize misfires during fast typing
  * - layers accessed via thumbs (momentary) and pinky (hold-preferred for gaming layer)
- * - right hand stays on mouse for gaming; left hand handles movement + modifiers
+ * - game layer customizes the left half while the right half inherits the base layer
  *
  * layer overview:
  *   0: base (abc)  — qwerty with homerow mods
@@ -233,7 +233,13 @@
          *   - timeless approach means quick E taps still register as E
          *   - E is typically "interact" — tapped, not held
          *
+         * right half inherits the base layer:
+         *   - keeps the full set of letters available for uncommon actions
+         *   - preserves right-hand homerow mods, including J=cmd for cmd+tab
+         *   - preserves the right thumb's sym-layer access
+         *
          * exit: `to 0` on right pinky (where / normally is)
+         *   - the only right-half override; all other usable positions are transparent
          *   - reachable when switching from mouse to keyboard
          *   - returns directly to base layer
          */
@@ -241,16 +247,16 @@
             display-name = "gam";
 
             // -----------------------------------------------------------------------------------------
-            // |      |  1  |  2  |  3  |  4  |  5  |      |      |     |     |     |     |     |      |
-            // |      | TAB |  Q  |  W  | E/⌘ |  R  |      |      |     |     |     |     |     |      |
-            // |      |  ⇧  |  A  |  S  |  D  |  F  |             |     |     |     |     | →0  |      |
-            //                    | ESC | SPC | TAB |             |     |     |     |
+            // |      |  1  |  2  |  3  |  4  |  5  |      |      |  Y  |  U  |  I  |  O  |  P  |      |
+            // |      | TAB |  Q  |  W  | E/⌘ |  R  |      |      | H/🌐 | J/⌘ | K/⌥ | L/⌃ | ;/⇧ |      |
+            // |      |  ⇧  |  A  |  S  |  D  |  F  |             |  N  |  M  |  ,  |  .  | →0  |      |
+            //                    | ESC | SPC | TAB |             | RET | SYM | BSPC |
 
             bindings = <
-&none  &kp N1     &kp N2  &kp N3   &kp N4               &kp N5   &none  &none  &none  &none  &none  &none  &none  &none
-&none  &kp TAB    &kp Q   &kp W    &hml LEFT_COMMAND E  &kp R    &none  &none  &none  &none  &none  &none  &none  &none
-&none  &kp RSHFT  &kp A   &kp S    &kp D                &kp F                  &none  &none  &none  &none  &to 0  &none
-                          &kp ESC  &kp SPACE            &kp TAB                &none  &none  &none
+&none  &kp N1     &kp N2  &kp N3   &kp N4               &kp N5   &none  &none  &trans  &trans  &trans  &trans  &trans  &none
+&none  &kp TAB    &kp Q   &kp W    &hml LEFT_COMMAND E  &kp R    &none  &none  &trans  &trans  &trans  &trans  &trans  &none
+&none  &kp RSHFT  &kp A   &kp S    &kp D                &kp F                  &trans  &trans  &trans  &trans  &to 0   &none
+                          &kp ESC  &kp SPACE            &kp TAB                &trans  &trans  &trans
             >;
         };
     };
